@@ -2,7 +2,7 @@ package main
 
 import (
 	"github.com/gorilla/handlers"
-	"musicstore/album"
+	"./album"
 )
 
 func main() {
