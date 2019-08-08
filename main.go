@@ -1,6 +1,8 @@
 package main
 
 import (
+	"log"
+	"net/http"
 	"github.com/gorilla/handlers"
 	"./album"
 )
@@ -14,7 +16,7 @@ func main() {
 
 	// launch server with cors validations
 	log.Fatal(http.ListenAndServe(":8000",
-	handlers.CORS(allowedOrigins, allowedMethods)(router)
+	handlers.CORS(allowedOrigins, allowedMethods)(router),
 	))
 
 }
