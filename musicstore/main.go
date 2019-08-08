@@ -1,9 +1,8 @@
 package main
 
 import (
-	"musicstore/album"
-
 	"github.com/gorilla/handlers"
+	"musicstore/album"
 )
 
 func main() {
