@@ -7,7 +7,7 @@ type Album struct {
 	ID     bson.ObjectId `bson:"_id"`
 	Title  string        `json:"title"`
 	Artist string        `json:"artist"`
-	Year   int32         `json:"year"`
+	Year   string         `json:"year"`
 }
 
 // Albums is an array of Album
