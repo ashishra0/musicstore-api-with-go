@@ -42,7 +42,7 @@ var routes = Routes{
 	Route{
 		"DeleteAlbum",
 		"DELETE",
-		"/",
+		"/{id}",
 		controller.DeleteAlbum,
 	},
 }
