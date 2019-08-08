@@ -1,8 +1,9 @@
 package album
 
 import (
+	"../logger"
 	"net/http"
-	"musicstore/logger"
+
 	"github.com/gorilla/mux"
 )
 
@@ -10,9 +11,9 @@ var controller = &Controller{Repository: Repository{}}
 
 // Route defines a route
 type Route struct {
-	Name string
-	Method string
-	Pattern string
+	Name        string
+	Method      string
+	Pattern     string
 	HandlerFunc http.HandlerFunc
 }
 
@@ -36,12 +37,18 @@ var routes = Routes{
 		"UpdateAlbum",
 		"PUT",
 		"/",
+		controller.UpdateAlbum,
+	},
+	Route{
+		"DeleteAlbum",
+		"DELETE",
+		"/",
 		controller.DeleteAlbum,
-	}
+	},
 }
 
 // NewRouter configures a new router to the api
-func NewRouter() *muxRouter {
+func NewRouter() *mux.Router {
 	router := mux.NewRouter().StrictSlash(true)
 	for _, route := range routes {
 		var handler http.Handler
