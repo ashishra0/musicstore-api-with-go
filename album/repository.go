@@ -12,7 +12,7 @@ import (
 type Repository struct{}
 
 // The db server
-const SERVER = "localhost:3006"
+const SERVER = "localhost:27017"
 
 // The name of the db instance
 const DBNAME = "musicstore"
