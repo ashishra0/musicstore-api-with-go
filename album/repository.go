@@ -36,11 +36,11 @@ func (r Repository) GetAlbums() Albums {
 }
 
 // AddAlbum inserts an album in the DB
-func (r Repository) AddAlbum(album album) bool {
+func (r Repository) AddAlbum(album Album) bool {
 	session, err := mgo.Dial(SERVER)
 	defer session.Close()
 
-	album.ID = bson.NewObjectID()
+	album.ID = bson.NewObjectId()
 	session.DB(DBNAME).C(DOCNAME).Insert(album)
 
 	if err != nil {
@@ -51,7 +51,7 @@ func (r Repository) AddAlbum(album album) bool {
 }
 
 // UpdateAlbum updates an Album in the DB (not used for now)
-func (r Repository) UpdateAlbum(album album) bool {
+func (r Repository) UpdateAlbum(album Album) bool {
 	session, err := mgo.Dial(SERVER)
 	defer session.Close()
 	session.DB(DBNAME).C(DOCNAME).UpdateId(album.ID, album)
