@@ -4,7 +4,7 @@ import (
 	"log"
 	"net/http"
 	"github.com/gorilla/handlers"
-	"./album"
+	"../musicstore-go-api/album"
 )
 
 func main() {
